@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>media</title>
+</head>
+<body>
+
+    Nome: <input type="text" id="nome"> <br>
+    Turma: <input type="text" id="turma"> <br>
+    Disciplina: <input type="text" id="disciplina"> <br>
+    Nota1: <input type="number" id="num1"> <br>
+    Nota2: <input type="number" id="num2"> <br>
+    Nota3: <input type="number" id="num3"> <br>
+    <button onclick="geral()">Calcular Média</button>
+
+
+    <p id="demo"></p>
+
+    <script>
+        function geral (){
+            nome=document.getElementById("nome").value;
+            turma=document.getElementById("turma").value;
+            disciplina=document.getElementById("disciplina").value;
+            nota1=parseInt(document.getElementById("num1").value);
+            nota2=parseInt(document.getElementById("num2").value);
+            nota3=parseInt(document.getElementById("num3").value);
+            
+
+
+            function validarNota(){
+            if (nota1 > 20 || nota1 < 0){
+                alert("nota1 invalida, por favor insira um valor de 0 a 20!!!");
+            }
+            if (nota2 > 20 || nota2 < 0){
+                alert("nota2 invalida, por favor insira um valor de 0 a 20!!!");
+            }
+            if (nota3 > 20 || nota2 < 0){
+                alert("nota3 invalida, por favor insira um valor de 0 a 20!!!");
+            }
+
+        }
+        validarNota();
+
+        
+
+            
+            media = (nota1 + nota2 + nota3) / 3;
+
+
+        if (media >= 10){
+            aprovado();
+        } else {
+            reprovado();
+        }
+
+
+
+        function aprovado(){
+            document.getElementById("demo").innerHTML = "Aluno APROVADO" + " " + nome + " " + " da turma " + turma + " teve uma média de " + media + " à disciplina " + disciplina;
+        }
+
+        function reprovado(){
+            document.getElementById("demo").innerHTML = "Aluno REPROVADO" + " " + nome + " " + " da turma " + turma + " teve uma média de " + media + " à disciplina " + disciplina;
+
+        }
+        
+        
+
+    }
+
+
+
+
+    </script>
+    
+</body>
+</html>
